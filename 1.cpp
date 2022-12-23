@@ -10,7 +10,10 @@ using namespace std;
 *
 */
 //prototype
+
 void show(int b[][2],int row,int col);
+
+int max(int b[3][2],int row,int col);
 //--------------------------
 //micro
 //---------------------
@@ -25,6 +28,11 @@ int a[3][2] = {{15,18} , {19,12} , {14,17}};
 show(a,3,2);
 
 
+//Seperator
+cout<<endl<<"-------------------------"<<endl;
+
+//Maximum of values
+cout<<"Maximum of values = "<<max(a,3,2);
 
 getch();
 }
@@ -49,3 +57,27 @@ void show(int b[][2],int row,int col)
     }
 }
 
+//--------------------------------
+
+//Function for find maximum of values
+int max(int b[3][2],int row,int col)
+{
+
+    int max = b[0][0];
+
+     for(int i = 0; i<row; ++i)
+     {
+        for(int j = 0; j<col; ++j)
+        {
+         
+            if(max < b[i][j])
+            {
+            max = b[i][j];
+            }
+        }
+     }
+
+     return max;
+}
+
+//---------------------------------------------
